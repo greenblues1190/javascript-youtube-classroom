@@ -442,9 +442,13 @@ var searchVideosWithAPI = function searchVideosWithAPI(query) {
 
     throw new Error('API 요청에 실패했습니다.');
   });
-};
+}; // export const searchVideos =
+//   process.env.NODE_ENV === 'development'
+//     ? searchVideosMock
+//     : searchVideosWithAPI;
 
-var searchVideos =  true ? _mocks_api_js__WEBPACK_IMPORTED_MODULE_2__.searchVideosMock : 0;
+
+var searchVideos = searchVideosWithAPI;
 var getSavedVideos = function getSavedVideos() {
   return webStore.load();
 };
